@@ -38,10 +38,17 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
-
-        return new double[0]; // replace this return statement with your own
+        double[] multiples = new double[length];
+        //make a for loop to access number item in list
+        for(int i = 1;i < length + 1 ;i++)
+        {
+            //get multiples
+            double result = number * i;
+            multiples[i-1] = result;
+        }
+        //return list
+        return multiples;
     }
-    
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
     /// <c>&lt;List&gt;{1, 2, 3, 4, 5, 6, 7, 8, 9}</c> and an amount is 3 then the list returned should be 
@@ -56,6 +63,10 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+List<int> range = data.GetRange(data.Count - amount, amount);
 
+        data.RemoveRange(data.Count - amount, amount);
+
+        data.InsertRange(0, range);
     }
 }
