@@ -16,6 +16,8 @@
         while (players.Length > 0)
             players.GetNextPerson();
         // Defect(s) Found: 
+            '''Names are queued in the incorrect order but thankfully are called the right amount of times.'''
+
 
         Console.WriteLine("---------");
 
@@ -39,6 +41,8 @@
             players.GetNextPerson();
 
         // Defect(s) Found: 
+        '''The queue is reversed because Sue goes first and it doesnt dequueue until all the turns are taken first.
+     In this case Sue and Tim go first but then Gearge is added then Bob'''
 
         Console.WriteLine("---------");
 
@@ -57,7 +61,9 @@
             // Console.WriteLine(players);
         }
         // Defect(s) Found: 
-
+ '''Names are queued in the wrong order, although Bob and Sue have the right amount of turns,
+      Tim should have an infinite amount of turns until the range of 10 is met but he does not. Tim is queued once and never to be queued again.
+      This is because there is not a plan for when this condition is met'''
         Console.WriteLine("---------");
 
          // Test 4
@@ -74,6 +80,7 @@
             // Console.WriteLine(players);
         }
         // Defect(s) Found: 
+        '''Names queued right but it is reversed somehow. 
 
         Console.WriteLine("---------");
 
@@ -84,5 +91,6 @@
         players = new TakingTurnsQueue();
         players.GetNextPerson();
         // Defect(s) Found:
+        '''This seems to work as inteneded, when there is no one in the queue it will display "No one in the queue."'''
     }
 }
